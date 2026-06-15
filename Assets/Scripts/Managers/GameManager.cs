@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        PauseManager.instance.PauseGame(false);
         if (_levelManager != null) _levelManager.StartLevel(1);
     }
 

@@ -1,12 +1,12 @@
 // EnemyAttackBehavior.cs
 using UnityEngine;
 
-public class EnemyAttackBehavior : MonoBehaviour, IBehavior
+public class EnemyAttackBehavior : MonoBehaviour, IBehavior, IAttack
 {
     [Header("Настройки атаки")]
-    [SerializeField] private float _attackCooldown = 1.5f;
-    [SerializeField] private int _damage = 10;
-    [SerializeField] private float _attackDistance = 0.5f;
+    private float _attackCooldown = 0f;
+    private float _damage = 0f;
+    private float _attackDistance = 0f;
     [SerializeField] private float _searchRadius = 5f;
     
     private float _lastAttackTime;
@@ -48,5 +48,20 @@ public class EnemyAttackBehavior : MonoBehaviour, IBehavior
             
             _lastAttackTime = Time.time;
         }
+    }
+
+    public void SetAttack(float newAttack)
+    {
+        _damage = newAttack;
+    }
+
+    public void SetAttackDistance(float newDistance)
+    {
+        _attackDistance = newDistance;
+    }
+
+    public void SetCoolDown(float newCoolDown)
+    {
+        _attackCooldown = newCoolDown;
     }
 }

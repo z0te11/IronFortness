@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.046749115, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 912a6b65bd4856b41afa86298e977313, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.22, y: 6.09, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4449203494729856557}
@@ -159,6 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8903b7a681a4fa48af10d2fd0be7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelUnit: 1
+  damage: 1
+  damageDisance: 20
+  cooldown: 1
 --- !u!114 &2798021686213659013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 3919295930737842716, guid: 39aad72323f95e942906c66ae0ef88d4, type: 3}
   _shootPoint: {fileID: 8084853264449456483}
-  _attackCooldown: 1
-  _damage: 1
-  _searchRadius: 50
 --- !u!61 &8735038758351613220
 BoxCollider2D:
   m_ObjectHideFlags: 0

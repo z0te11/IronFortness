@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class UnitEnemy : MonoBehaviour
+public class UnitEnemy : Unit
 {
-    [SerializeField] public int levelUnit;
+
 }

@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class PlayerAttackBehaviour : MonoBehaviour, IBehavior
+public class PlayerAttackBehaviour : MonoBehaviour, IBehavior, IAttack
 {
     [Header("Настройки атаки")]
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _shootPoint;
-    [SerializeField] private float _attackCooldown = 1f;
-    [SerializeField] private int _damage = 15;
-    
-    [Header("Поиск цели")]
-    [SerializeField] private float _searchRadius = 5f;
+    private float _attackCooldown;
+    private float _damage;
+    private float _searchRadius;
     
     private Transform _currentTarget;
     private float _lastAttackTime;
@@ -29,7 +27,22 @@ public class PlayerAttackBehaviour : MonoBehaviour, IBehavior
             _lastAttackTime = Time.time;
         }
     }
-    
+
+    public void SetAttack(float newAttack)
+    {
+        _damage = newAttack;
+    }
+
+    public void SetAttackDistance(float newDistance)
+    {
+        _searchRadius = newDistance;
+    }
+
+    public void SetCoolDown(float newCoolDown)
+    {
+        _attackCooldown = newCoolDown;
+    }
+
     private void Shoot()
     {
         if (_bullet == null) return;
