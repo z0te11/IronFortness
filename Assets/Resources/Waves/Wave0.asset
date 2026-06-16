@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Wave0
   m_EditorClassIdentifier: 
   numberWave: 0
-  delayBetweenSpawns: 5
+  delayBetweenSpawns: 0.1
   levelUnit: 00000000
-  enemyCount: 10
+  enemyCount: 50
