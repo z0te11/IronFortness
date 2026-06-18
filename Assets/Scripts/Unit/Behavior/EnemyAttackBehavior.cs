@@ -39,7 +39,7 @@ public class EnemyAttackBehavior : MonoBehaviour, IBehavior, IAttack
         
         if (distance <= _attackDistance)
         {
-            UnitPlayerLives unitLives = playerUnit.GetComponent<UnitPlayerLives>();
+            PlayerLives unitLives = playerUnit.GetComponent<PlayerLives>();
             
             if (unitLives != null)
             {

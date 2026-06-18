@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2798021686213659013}
   - component: {fileID: 2237014996603800870}
   - component: {fileID: 8735038758351613220}
+  - component: {fileID: 4723227060400048757}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -159,10 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8903b7a681a4fa48af10d2fd0be7808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUnit: 1
-  damage: 1
-  damageDisance: 20
-  cooldown: 1
+  characters:
+    levelUnit: 1
+    lives: 50
+    damage: 1
+    damageDisance: 25
+    cooldown: 1
 --- !u!114 &2798021686213659013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc07bba9594f2e4791f97cac7ac138b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _debugMode: 1
+  _debugMode: 0
 --- !u!114 &2237014996603800870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,5 +236,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &4723227060400048757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509273820763770168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5120ff707245a8f4ea2e0e2e29109e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

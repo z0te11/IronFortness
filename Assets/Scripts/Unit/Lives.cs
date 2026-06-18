@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class UnitLives : MonoBehaviour
+public class Lives : MonoBehaviour
 {
     [SerializeField] private float _lives;
     private float _defLives;
 
-    public float Lives
+    public float Live
     {
         set
         { 
@@ -17,13 +17,13 @@ public class UnitLives : MonoBehaviour
 
     private void Start()
     {
-        _defLives = Lives;
+        _defLives = Live;
     }
 
     public void GetDamage(float damage)
     {
-        Lives -= damage;
-        if (Lives <= 0)
+        Live -= damage;
+        if (Live <= 0)
         {
             Die();
         }
@@ -31,7 +31,7 @@ public class UnitLives : MonoBehaviour
 
     public void GetHeal(float heal)
     {
-        Lives += heal;
+        Live += heal;
     }
 
     public virtual void Die()

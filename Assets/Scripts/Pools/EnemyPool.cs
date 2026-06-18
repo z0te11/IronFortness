@@ -15,11 +15,13 @@ public class EnemyPool : MonoBehaviour
     public void SetUnitInPool(GameObject newUnit)
     {
         _enemyPoolUnits.Add(newUnit);
+        LevelManager.instance.EnemyIsFinished(false);
     }
 
     public void RemoveUnitFromPool(GameObject newUnit)
     {
         _enemyPoolUnits.Remove(newUnit);
+        if (_enemyPoolUnits.Count < 1) LevelManager.instance.EnemyIsFinished(true);
     }
 
     public GameObject FindNearestTarget(Vector3 origin, float radius)

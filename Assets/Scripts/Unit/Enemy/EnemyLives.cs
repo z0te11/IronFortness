@@ -3,7 +3,7 @@
 using System;
 using UnityEngine;
 
-public class UnitEnemyLives : UnitLives, IGetMoney
+public class EnemyLives : Lives, IGetMoney
 {
     [SerializeField] private int _money;
     public override void Die()

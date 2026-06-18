@@ -9,10 +9,21 @@ public class PauseManager : MonoBehaviour
     public static Action OnUnPauseGame;
     public static PauseManager instance;
     private bool _isPause;
+    private bool _isCanUsePause = true;
 
     private void Awake()
     {
         if (instance == null) instance = this;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnWinEndGame += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnWinEndGame -= EndGame;
     }
 
     public bool GetStatePause()
@@ -22,6 +33,8 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame(bool isPause)
     {
+        if (!_isCanUsePause) return;
+
         if (isPause)
         {
             Time.timeScale = 0f;
@@ -34,5 +47,11 @@ public class PauseManager : MonoBehaviour
             OnUnPauseGame?.Invoke();
             _isPause = false;
         } 
+    }
+
+    public void EndGame(bool isWin)
+    {
+        Time.timeScale = 0f;
+        _isCanUsePause = false;
     }
 }

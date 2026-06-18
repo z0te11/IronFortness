@@ -5,11 +5,9 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] public int levelUnit;
-    [SerializeField] public float damage;
-    [SerializeField] public float damageDisance;
-    [SerializeField] public float cooldown;
+    [SerializeField] public UnitCharacters characters;
     private List<IAttack> _iAttacks;
+    private List<ILives> _iLives;
 
     private void Awake()
     {
@@ -17,9 +15,18 @@ public abstract class Unit : MonoBehaviour
         {
             _iAttacks = GetComponents<IAttack>().ToList();
         }
+        if (_iLives == null || _iLives.Count == 0)
+        {
+            _iLives = GetComponents<ILives>().ToList();
+        }
     }
 
     private void Start()
+    {
+        RealizeData();
+    }
+
+    public void RealizeData()
     {
         if (_iAttacks != null)
         {
@@ -27,9 +34,20 @@ public abstract class Unit : MonoBehaviour
             {
                 if (attack == null) continue;
                 
-                attack.SetAttack(damage);
-                attack.SetAttackDistance(damageDisance);
-                attack.SetCoolDown(cooldown);
+                attack.SetAttack(characters.damage);
+                attack.SetAttackDistance(characters.damageDisance);
+                attack.SetCoolDown(characters.cooldown);
+            }
+        }
+
+        if (_iLives != null)
+        {
+            foreach (ILives live in _iLives)
+            {
+                if (live == null) continue;
+                
+                live.SetLives(characters.lives);
+
             }
         }
     }

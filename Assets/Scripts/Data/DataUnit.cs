@@ -14,7 +14,7 @@ public class DataUnit : MonoBehaviour
     {
         for (int i = 0; i < _enemyUnits.Length; i++)
         {
-            if (_enemyUnits[i].GetComponent<UnitEnemy>().levelUnit == level) return _enemyUnits[i];
+            if (_enemyUnits[i].GetComponent<UnitEnemy>().characters.levelUnit == level) return _enemyUnits[i];
         }
         return _enemyUnits[0];
     }

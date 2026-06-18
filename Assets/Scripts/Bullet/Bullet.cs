@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        UnitEnemyLives unitLives = other.GetComponent<UnitEnemyLives>();
+        EnemyLives unitLives = other.GetComponent<EnemyLives>();
         
         if (unitLives != null)
         {

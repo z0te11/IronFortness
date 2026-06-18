@@ -11,6 +11,7 @@ public class WaveController : MonoBehaviour
     {
         _currentWave = newWave;
         StartCoroutine(SpawnWaveCoroutine());
+        LevelManager.instance.WaveIsFinished(false);
     }
     
     private IEnumerator SpawnWaveCoroutine()
@@ -28,6 +29,8 @@ public class WaveController : MonoBehaviour
         }
 
         Debug.Log($"Волна {_currentWave.numberWave} полностью завершена");
+        LevelManager.instance.WaveIsFinished(true);
+
     }
     
     
