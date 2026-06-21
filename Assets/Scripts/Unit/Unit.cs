@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -9,7 +10,7 @@ public abstract class Unit : MonoBehaviour
     private List<IAttack> _iAttacks;
     private List<ILives> _iLives;
 
-    private void Awake()
+    protected void Awake()
     {
         if (_iAttacks == null || _iAttacks.Count == 0)
         {
@@ -21,12 +22,12 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         RealizeData();
     }
 
-    public void RealizeData()
+    public virtual void RealizeData()
     {
         if (_iAttacks != null)
         {

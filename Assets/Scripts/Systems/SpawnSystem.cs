@@ -9,6 +9,5 @@ public class SpawnSystem : MonoBehaviour
     {
         GameObject newEnemy = Instantiate(enemy, pos.position, Quaternion.identity);
         EnemyMoverToBaseBehavior mewEnemyMover = newEnemy.GetComponent<EnemyMoverToBaseBehavior>();
-        _enemyPool.SetUnitInPool(newEnemy);
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   numberWave: 1
   delayBetweenSpawns: 1
   levelUnit: 00000000
-  enemyCount: 20
+  enemyCount: 30

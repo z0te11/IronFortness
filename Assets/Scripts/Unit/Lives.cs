@@ -1,27 +1,33 @@
 using UnityEngine;
 
-public class Lives : MonoBehaviour
+public class Lives : MonoBehaviour, ILives
 {
     [SerializeField] private float _lives;
     private float _defLives;
+    [SerializeField] private DamageFeedback _damageFeedback;
 
     public float Live
     {
         set
         { 
-            if (value > _defLives) _lives = _defLives;
-            else _lives = value;
+            _lives = value;
         }
         get {return _lives;}
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         _defLives = Live;
     }
 
     public void GetDamage(float damage)
     {
+
+        if (_damageFeedback != null)
+        {
+            _damageFeedback.PlayDamageFlash();
+        }
+
         Live -= damage;
         if (Live <= 0)
         {
@@ -37,5 +43,10 @@ public class Lives : MonoBehaviour
     public virtual void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    public void SetLives(int newLives)
+    {
+        Live = newLives;
     }
 }

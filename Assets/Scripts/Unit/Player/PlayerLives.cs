@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerLives : Lives, ILives
+public class PlayerLives : Lives
 {
     public override void Die()
     {
@@ -8,8 +8,4 @@ public class PlayerLives : Lives, ILives
         base.Die();
     }
 
-    public void SetLives(int newLives)
-    {
-        Live = newLives;
-    }
 }

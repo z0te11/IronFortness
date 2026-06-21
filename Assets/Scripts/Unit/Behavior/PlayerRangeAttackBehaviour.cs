@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttackBehaviour : MonoBehaviour, IBehavior, IAttack
+public class PlayerRangeAttackBehaviour : MonoBehaviour, IBehavior, IAttack
 {
     [Header("Настройки атаки")]
     [SerializeField] private GameObject _bullet;
