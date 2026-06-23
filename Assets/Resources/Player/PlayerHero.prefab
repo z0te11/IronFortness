@@ -295,12 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1955be6a75e5b2e478b7e9ae43da274f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-    levelUnit: 1
-    lives: 50
-    damage: 5
-    damageDisance: 4
-    cooldown: 1
+  characters: {fileID: 11400000, guid: 8dc546ad7bbc0d446ad1406360c3f918, type: 2}
   _selectableUnit: {fileID: 0}
   _unitMovement: {fileID: 0}
 --- !u!114 &6586503986423183413

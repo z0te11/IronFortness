@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 5901607737178936756}
   - component: {fileID: 5124451594431213481}
   - component: {fileID: 9116681413782314464}
-  - component: {fileID: 2629275911003201347}
   - component: {fileID: 7683170880084742684}
   - component: {fileID: 2064444802334394636}
   - component: {fileID: 8581820450585653174}
@@ -138,12 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5e7f872eb1e954c984c1eddb42fae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-    levelUnit: 1
-    lives: 25
-    damage: 1
-    damageDisance: 30
-    cooldown: 1
+  characters: {fileID: 11400000, guid: ad532f04bb6984a418d251540028ec5c, type: 2}
 --- !u!114 &9116681413782314464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,24 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lives: 50
   _damageFeedback: {fileID: 6952608086642399505}
---- !u!114 &2629275911003201347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322669636601762778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8903b7a681a4fa48af10d2fd0be7808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characters:
-    levelUnit: 1
-    lives: 50
-    damage: 1
-    damageDisance: 25
-    cooldown: 1
 --- !u!114 &7683170880084742684
 MonoBehaviour:
   m_ObjectHideFlags: 0

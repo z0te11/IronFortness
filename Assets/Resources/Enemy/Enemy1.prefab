@@ -154,12 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f332bbd988e4b694894a6909efe6cb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-    levelUnit: 0
-    lives: 2
-    damage: 1
-    damageDisance: 4
-    cooldown: 1
+  characters: {fileID: 11400000, guid: 961fe255d999d7e4cba2f3860bb320cc, type: 2}
 --- !u!114 &7574440575869642781
 MonoBehaviour:
   m_ObjectHideFlags: 0

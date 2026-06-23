@@ -40,4 +40,15 @@ public class UIManager : MonoBehaviour
         if (isWin) _winMenu.SetActive(true);
         else _loseMenu.SetActive(true);
     }
+
+    public void BackToMenu()
+    {
+        PauseManager.instance.PauseGame(false);
+        SceneManagerInstance.instance.LoadMainMenu();
+    }
+
+    public void RestartGame()
+    {
+        SceneManagerInstance.instance.LoadGameScene();
+    }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MainBuilding : MonoBehaviour
 {
-    public void Oestroy()
+    public void OnDestroy()
     {
         GameManager.instance.LoseGame();
     }

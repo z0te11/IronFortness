@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dd91d96f51eb744aafaa1ba40cfaf6, type: 3}
-  m_Name: Wave0
+  m_Script: {fileID: 11500000, guid: ba5060180543e5c44882c1f336814cf6, type: 3}
+  m_Name: AssetHero1
   m_EditorClassIdentifier: 
-  numberWave: 0
-  delayBetweenSpawns: 0.1
-  levelUnit: 00000000
-  enemyCount: 50
+  charactersHero: {fileID: 11400000, guid: 8dc546ad7bbc0d446ad1406360c3f918, type: 2}
+  spriteHero: {fileID: 21300000, guid: 3274bcf02d1bfee47ae59d1d4e1a870e, type: 3}

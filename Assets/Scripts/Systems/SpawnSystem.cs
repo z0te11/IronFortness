@@ -10,4 +10,10 @@ public class SpawnSystem : MonoBehaviour
         GameObject newEnemy = Instantiate(enemy, pos.position, Quaternion.identity);
         EnemyMoverToBaseBehavior mewEnemyMover = newEnemy.GetComponent<EnemyMoverToBaseBehavior>();
     }
+
+    public void SpawnHero(GameObject hero)
+    {
+        GameObject newPlayerHero = Instantiate(hero);
+        Debug.Log("SpawnHero");
+    }
 }

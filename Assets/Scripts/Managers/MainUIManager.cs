@@ -5,14 +5,17 @@ using UnityEngine;
 public class MainUIManager : MonoBehaviour
 {
     public static MainUIManager instance;
+    [SerializeField] private ChooseHeroPanel _chooseHeroPanel;
 
     private void Awake()
     {
         if (instance == null) instance = this;
     }
 
-    public void StartGame()
+    public void OpenChooseGeroPanel()
     {
-        SceneManagerInstance.instance.LoadGameScene();
+        var ChoosePanel = Instantiate(_chooseHeroPanel, this.transform);
+        ChoosePanel.GetComponent<ChooseHeroPanel>().ChooseHero(0);
     }
 }
+    

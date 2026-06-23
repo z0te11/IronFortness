@@ -18,7 +18,7 @@ public class DataWave : MonoBehaviour
             if (numberWave == _waves[i].numberWave) return _waves[i];
         }
         Debug.LogWarning("No Wave In Data!");
-        return _waves[0];
+        return null;
     }
 }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] public UnitCharacters characters;
+    [SerializeField] public Characters characters;
     private List<IAttack> _iAttacks;
     private List<ILives> _iLives;
 
