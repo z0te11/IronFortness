@@ -6,6 +6,7 @@ public class BuildingManager : MonoBehaviour
 {
     [SerializeField] private BuildingData[] _availableBuildings;
     [SerializeField] private BuildingPreview _buildingPreviewPrefab;
+    [SerializeField] private UnitSelection _unitSelection;
     
     private BuildingPreview _currentPreview;
     private BuildingData _selectedBuilding;
@@ -60,6 +61,7 @@ public class BuildingManager : MonoBehaviour
 
     public void StartBuilding(int buildingIndex)
     {
+        if (_unitSelection != null) _unitSelection.DeselectCurrent();
         if (_currentPreview == null)
         {
             Debug.LogError("BuildingPreview не инициализирован!");

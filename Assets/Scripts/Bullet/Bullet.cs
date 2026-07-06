@@ -4,14 +4,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Настройки пули")]
-    [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _lifeTime = 3f;
+    [SerializeField] protected float _speed = 10f;
+    [SerializeField] protected float _lifeTime = 3f;
     
-    private float _damage;
-    private Vector2 _direction;
-    private Rigidbody2D _rb;
+    protected float _damage;
+    protected Vector2 _direction;
+    protected Rigidbody2D _rb;
     
-    private void Start()
+    protected void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null)
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, _lifeTime);
     }
     
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         // Движение через Rigidbody для корректной работы коллизий
         _rb.velocity = _direction * _speed;
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         EnemyLives unitLives = other.GetComponent<EnemyLives>();
         

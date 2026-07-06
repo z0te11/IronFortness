@@ -1,4 +1,5 @@
 // EnemyMoveToPlayerBehavior.cs
+using System.Collections;
 using UnityEngine;
 
 public class UnitMoveToBehavior : MonoBehaviour, IBehavior
@@ -82,5 +83,21 @@ public class UnitMoveToBehavior : MonoBehaviour, IBehavior
         }
 
         _lastDirectionX = targetDirectionX;
+    }
+
+    // В EnemyMovement.cs нужно добавить этот метод:
+    public void ApplySlow(float slowAmount, float duration)
+    {
+        StartCoroutine(SlowCoroutine(slowAmount, duration));
+    }
+
+    private IEnumerator SlowCoroutine(float slowAmount, float duration)
+    {
+        float originalSpeed = _speed;
+        _speed *= slowAmount;
+        
+        yield return new WaitForSeconds(duration);
+        
+        _speed = originalSpeed;
     }
 }

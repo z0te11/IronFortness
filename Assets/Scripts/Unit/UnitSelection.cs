@@ -1,5 +1,6 @@
 // UnitSelection.cs
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelection : MonoBehaviour
 {
@@ -38,21 +39,34 @@ public class UnitSelection : MonoBehaviour
     /// </summary>
     private void HandlePrimaryAction()
     {
-        Vector2 mouseWorldPos = _inputHandler.MouseWorldPosition;
+        // Блокируем обработку если курсор над UI
+        if (IsPointerOverUI())
+            return;
 
-        // Пытаемся выбрать юнита
+        Vector2 mouseWorldPos = _inputHandler.MouseWorldPosition;
         SelectableUnit clickedUnit = GetUnitAtPosition(mouseWorldPos);
 
         if (clickedUnit != null)
         {
-            // Кликнули на юнита - выбираем его
             SelectUnit(clickedUnit);
         }
         else if (_selectedUnit != null)
         {
-            // Кликнули на пустое место - приказываем идти
             _selectedUnit.OrderMove(new Vector3(mouseWorldPos.x, mouseWorldPos.y, 0));
         }
+    }
+
+        private bool IsPointerOverUI()
+    {
+        if (EventSystem.current == null)
+            return false;
+
+        // Для мобильных устройств
+        if (Input.touchCount > 0)
+            return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+        
+        // Для ПК
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     /// <summary>

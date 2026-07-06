@@ -5,12 +5,14 @@ public class Lives : MonoBehaviour, ILives
     [SerializeField] private float _lives;
     private float _defLives;
     [SerializeField] private DamageFeedback _damageFeedback;
+    [SerializeField] private HealthBar _healthBar;
 
     public float Live
     {
         set
         { 
             _lives = value;
+            if (_healthBar != null) _healthBar.UpdateHealth(Live, _defLives);
         }
         get {return _lives;}
     }
@@ -18,10 +20,12 @@ public class Lives : MonoBehaviour, ILives
     protected virtual void Start()
     {
         _defLives = Live;
+        if (_healthBar != null) _healthBar.gameObject.SetActive(false);
     }
 
     public void GetDamage(float damage)
     {
+        if (_healthBar != null) _healthBar.gameObject.SetActive(true);
 
         if (_damageFeedback != null)
         {
